@@ -17,15 +17,7 @@ namespace CommunityInformation.Controllers
         public ViewResult Index()
         {
             // Home Page
-            return View("Index");
-        }
-
-
-
-        public ViewResult Contact()
-        {
-            // Contact Page
-            return View("Contact");
+            return View();
         }
 
 
@@ -33,7 +25,33 @@ namespace CommunityInformation.Controllers
         public ViewResult History()
         {
             // History Page
-            return View("History");
+            return View();
+        }
+
+
+
+        [HttpGet]
+        public ViewResult Contact()
+        {
+            // Contact Page
+            return View();
+        }        
+       
+
+
+        [HttpPost]
+        public ViewResult Contact(VisitorMessage vMessage)
+        {
+            if (ModelState.IsValid)
+            {               
+                return View("MessageSent", vMessage);
+            }
+            else
+            {
+                // error
+                return View();
+            }
+
         }
         #endregion
     }

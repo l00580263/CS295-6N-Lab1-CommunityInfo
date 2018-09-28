@@ -1,0 +1,29 @@
+﻿@model CommunityInformation.Models.VisitorMessage
+
+@{
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Donbass Contact</title>
+    <link rel="stylesheet" href="~/css/styles.css">
+    <link />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css">
+    <link />
+</head>
+
+
+<body>
+    <div class="text-center"><h4>Message Sent</h4></div>
+    <pre>
+        Message sent, @Model.Name, from @Model.Email.
+        
+        "@Model.Message"
+    </pre>
+</body>
+</html>

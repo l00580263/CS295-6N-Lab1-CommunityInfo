@@ -32,3 +32,4 @@ C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\Com
 C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\Razor\Views\Info\Info.g.cshtml.cs
 C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\Razor\Views\Info\Locations.g.cshtml.cs
 C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\Razor\Views\Info\People.g.cshtml.cs
+C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\Razor\Views\Home\MessageSent.g.cshtml.cs

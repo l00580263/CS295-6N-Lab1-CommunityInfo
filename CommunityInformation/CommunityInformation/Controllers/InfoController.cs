@@ -15,7 +15,7 @@ namespace CommunityInformation.Controllers
         public ViewResult Info()
         {
             // Info Page
-            return View("Info");
+            return View();
         }
 
 
@@ -23,7 +23,7 @@ namespace CommunityInformation.Controllers
         public ViewResult Locations()
         {
             // Locations Page
-            return View("Locations");
+            return View();
         }
 
 
@@ -31,7 +31,7 @@ namespace CommunityInformation.Controllers
         public ViewResult People()
         {
             // People Page
-            return View("People");
+            return View();
         }
         #endregion
     }
