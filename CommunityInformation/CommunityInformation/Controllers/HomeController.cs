@@ -10,34 +10,31 @@ namespace CommunityInformation.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+
+
+
+        #region Methods
+        public ViewResult Index()
         {
-            return View();
+            // Home Page
+            return View("Index");
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
 
-            return View();
+
+        public ViewResult Contact()
+        {
+            // Contact Page
+            return View("Contact");
         }
 
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
 
-            return View();
-        }
 
-        public IActionResult Privacy()
+        public ViewResult History()
         {
-            return View();
+            // History Page
+            return View("History");
         }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        #endregion
     }
 }
