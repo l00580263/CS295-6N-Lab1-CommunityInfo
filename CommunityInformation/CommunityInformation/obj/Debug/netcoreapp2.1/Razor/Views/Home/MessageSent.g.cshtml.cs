@@ -67,12 +67,12 @@ using CommunityInformation.Models;
             WriteLiteral("\r\n<!DOCTYPE html>\r\n<html>\r\n\r\n\r\n");
             EndContext();
             BeginContext(113, 266, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed0271dfe5c3494a981e73c2c85b3726", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f69f445ab7c34fb286bc380140f8686c", async() => {
                 BeginContext(119, 101, true);
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width\" />\r\n    <title>Donbass Contact</title>\r\n    ");
                 EndContext();
                 BeginContext(220, 47, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "7e9a190db07b46919d91092d029edd42", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "67595b9b556e417485dc0dab51005302", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -91,7 +91,7 @@ using CommunityInformation.Models;
                 WriteLiteral("\r\n    <link />\r\n    ");
                 EndContext();
                 BeginContext(287, 69, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "e584667b473a47f2a444fb1d2db31bf6", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "03793c09aaa34cb68156737dadb1af18", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -125,7 +125,7 @@ using CommunityInformation.Models;
             WriteLiteral("\r\n\r\n\r\n");
             EndContext();
             BeginContext(385, 197, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "28ee00adab7c4b6abad40620cf64fa35", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3159fe3d78694b02a73b79d965c54ce0", async() => {
                 BeginContext(391, 103, true);
                 WriteLiteral("\r\n    <div class=\"text-center\"><h4>Message Sent</h4></div>\r\n    <br>\r\n    <pre>\r\n        Message sent, ");
                 EndContext();
