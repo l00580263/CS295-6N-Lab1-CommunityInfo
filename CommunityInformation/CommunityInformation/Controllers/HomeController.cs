@@ -39,7 +39,7 @@ namespace CommunityInformation.Controllers
 
 
         [HttpGet]
-        public ViewResult Messager()
+        public ViewResult Messenger()
         {
             // Message people
             return View();
@@ -48,7 +48,7 @@ namespace CommunityInformation.Controllers
 
 
         [HttpPost]
-        public ViewResult Messager(Message vMessage)
+        public ViewResult Messenger(Message vMessage)
         {
             if (ModelState.IsValid)
             {               
