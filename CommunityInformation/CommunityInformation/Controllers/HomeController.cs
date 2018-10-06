@@ -30,10 +30,18 @@ namespace CommunityInformation.Controllers
 
 
 
+        public ViewResult Messages()
+        {
+            // View messages
+            return View();
+        }
+
+
+
         [HttpGet]
         public ViewResult Messager()
         {
-            // Contact Page
+            // Message people
             return View();
         }        
        

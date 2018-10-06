@@ -1,6 +1,7 @@
 ﻿@{
     //Layout = null;
 }
+@model CommunityInformation.Models.PersonEntry
 
 <!DOCTYPE html>
 <html>
@@ -18,44 +19,51 @@
     <h1 class="text-center text-primary">People of Donbass</h1>
     <br>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="thumbnail">
-                    <img class="img-rounded img-responsive" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/2017-09-28_Denis_Pushilin.jpg/528px-2017-09-28_Denis_Pushilin.jpg" alt="Denis Vladimirovich Pushilin" />
-                    <div class="caption">
-                        Denis Vladimirovich Pushilin by <a href="http://council.gov.ru/events/multimedia/photo/68655/">Press Service</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY 4.0</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-8">
-                <h3>Denis Vladimirovich Pushilin</h3>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                est laborum.
-            </div>
-        </div>
+    @{
+        List<PersonEntry> peoples = new List<PersonEntry>();
+        peoples.Add(new PersonEntry()
+        {
+            Name = "Denis Vladimirovich Pushilin",
+            ImageURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/2017-09-28_Denis_Pushilin.jpg/528px-2017-09-28_Denis_Pushilin.jpg",
+            Description = @" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est laborum."
+        });
 
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="thumbnail">
-                    <img class="img-rounded img-responsive" src="https://upload.wikimedia.org/wikipedia/commons/3/3b/%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4_%D0%9F%D0%B0%D1%81%D0%B5%D1%87%D0%BD%D0%B8%D0%BA_2016.png" alt="Leonid Ivanovich Pasechnik" />
-                    <div class="caption">
-                        Leonid Ivanovich Pasechnik by <a href="https://www.youtube.com/watch?v=HNIstNOdxAM">Юго-ВОСТОК. информационно-аналитическое агентство</a> is licensed under <a href="https://creativecommons.org/licenses/by/3.0/deed.en">CC BY 3.0</a>
+        peoples.Add(new PersonEntry()
+        {
+            Name = "Leonid Ivanovich Pasechnik",
+            ImageURL = "https://upload.wikimedia.org/wikipedia/commons/3/3b/%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4_%D0%9F%D0%B0%D1%81%D0%B5%D1%87%D0%BD%D0%B8%D0%BA_2016.png",
+            Description = @" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est laborum."
+        });
+    }
+
+
+
+    <div class="container">
+        @{
+            foreach (var e in peoples)
+            {
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <img class="img-rounded img-responsive" src="@e.ImageURL" />
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <h3>@e.Name</h3>
+                        @e.Description
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-8">
-                <h3>Leonid Ivanovich Pasechnik</h3>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                est laborum.
-            </div>
-        </div>
+            }
+        }
     </div>
+
 </body>
 </html>
