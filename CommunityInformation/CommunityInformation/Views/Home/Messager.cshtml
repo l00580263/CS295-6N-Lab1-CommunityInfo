@@ -1,4 +1,4 @@
-﻿@model CommunityInformation.Models.VisitorMessage
+﻿@model CommunityInformation.Models.Message
 
 @{
     Layout = null;
@@ -24,22 +24,17 @@
         <div class="panel-heading text-center"><h4>Contact</h4></div>
         <div class="panel-body">
 
-            <form class="p-a-1" asp-controller="Home" asp-action="Contact" method="post">
+            <form class="p-a-1" asp-controller="Home" asp-action="Messager" method="post">
                 <div asp-validation-summary="All"></div>
 
                 <div class="form-group">
-                    <label asp-for="Name">Your Name:</label>
-                    <input class="form-control" asp-for="Name" />
+                    <label asp-for="Recipient">To:</label>
+                    <input class="form-control" asp-for="Recipient" />
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Email">Your Email:</label>
-                    <input class="form-control" asp-for="Email" />
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Message">Your Message:</label>
-                    <input class="form-control" asp-for="Message" />
+                    <label asp-for="Text">Your Message:</label>
+                    <input class="form-control" asp-for="Text" />
                 </div>
 
                 <div class="text-center">

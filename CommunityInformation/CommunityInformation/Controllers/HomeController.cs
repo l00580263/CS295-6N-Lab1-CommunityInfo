@@ -31,7 +31,7 @@ namespace CommunityInformation.Controllers
 
 
         [HttpGet]
-        public ViewResult Contact()
+        public ViewResult Messager()
         {
             // Contact Page
             return View();
@@ -40,7 +40,7 @@ namespace CommunityInformation.Controllers
 
 
         [HttpPost]
-        public ViewResult Contact(VisitorMessage vMessage)
+        public ViewResult Messager(Message vMessage)
         {
             if (ModelState.IsValid)
             {               

@@ -1,4 +1,4 @@
-﻿@model CommunityInformation.Models.VisitorMessage
+﻿@model CommunityInformation.Models.Message
 
 @{
     //Layout = null;
@@ -22,9 +22,9 @@
     <div class="text-center"><h4>Message Sent</h4></div>
     <br>
     <pre>
-        Message sent, @Model.Name, from @Model.Email.
+        Message sent to @Model.Recipient.Name.
         
-        "@Model.Message"
+        "@Model.Text"
     </pre>
 </body>
 </html>
