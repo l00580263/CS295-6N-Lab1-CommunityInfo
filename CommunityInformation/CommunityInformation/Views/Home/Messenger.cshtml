@@ -28,11 +28,30 @@
                 <div asp-validation-summary="All"></div>
 
                 <div class="form-group">
-                    <label asp-for="Recipient">To:</label>
-                    <input class="form-control" asp-for="Recipient" />
-                </div>
 
-                <div class="form-group">
+                    <label asp-for="Recipient">To:</label>
+                    <select class="form-control" asp-for="Recipient">
+                        @{
+                            // list contacts
+                            int i = 0;
+                            foreach (User usr in Repository.Users)
+                            {
+                                if (usr == Repository.LoggedIn)
+                                {
+                                    //also removes the logged in user from contacts
+                                    i++;
+                                    continue;
+                                }
+                                <option value="@i">@usr.Name</option>
+                                i++;
+                            }
+                        }
+
+                    </select>
+
+                    <label asp-for="Subject">Subject:</label>
+                    <input class="form-control" asp-for="Subject"/>
+
                     <label asp-for="Text">Your Message:</label>
                     <input class="form-control" asp-for="Text" />
                 </div>

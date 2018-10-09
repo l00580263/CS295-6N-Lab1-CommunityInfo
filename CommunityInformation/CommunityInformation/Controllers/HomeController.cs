@@ -13,6 +13,30 @@ namespace CommunityInformation.Controllers
 
 
 
+        #region Constructors
+        public HomeController()
+        {
+            if (!Repository.Fresh)
+            {
+                return;
+            }
+            // initialize repository
+            User user1 = new User() { Name = "Kolton" };
+            User user2 = new User() { Name = "Bobby" };
+            User user3 = new User() { Name = "Hank" };
+            Repository.Users.AddRange(new User[]{user1, user2, user3});
+            Message message1 = new Message() { Subject = "This site sucks", Text = "Not kidding, RIP.", Recipient = user2, Sender = user1 };
+            Message message2 = new Message() { Subject = "RE: This site sucks", Text = "bruh, swag yeah", Recipient = user1, Sender = user2 };
+            Message message3 = new Message() { Subject = "Wait till Bobby sees this!", Text = "Dang it, Bobby.", Recipient = user1, Sender = user3 };
+            Repository.Messages.AddRange(new Message[] { message1, message2, message3 });
+            // log in as Bobby
+            Repository.LoggedIn = user2;
+            Repository.Fresh = false;
+        }
+        #endregion
+
+
+
         #region Methods
         public ViewResult Index()
         {
@@ -33,7 +57,7 @@ namespace CommunityInformation.Controllers
         public ViewResult Messages()
         {
             // View messages
-            return View();
+            return View(Repository.Messages);
         }
 
 
@@ -48,11 +72,14 @@ namespace CommunityInformation.Controllers
 
 
         [HttpPost]
-        public ViewResult Messenger(Message vMessage)
+        public ViewResult Messenger(int Recipient, string Subject, string Text)
         {
             if (ModelState.IsValid)
-            {               
-                return View("MessageSent", vMessage);
+            {
+                Message newMessage = new Message() { Sender = Repository.LoggedIn, Recipient = Repository.Users[Recipient], Subject = Subject, Text = Text };
+                // add message
+                Repository.Messages.Add(newMessage);
+                return View("Messages", Repository.Messages);
             }
             else
             {

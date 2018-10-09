@@ -8,7 +8,6 @@ namespace CommunityInformation.Models
     public class User
     {
         #region Fields
-        List<Message> messages = new List<Message>();
         #endregion
 
 

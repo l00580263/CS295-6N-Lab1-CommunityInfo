@@ -8,7 +8,9 @@ C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\Com
 C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\CommunityInformation.RazorCoreGenerate.cache
 C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\Razor\Views\Home\History.g.cshtml.cs
 C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\Razor\Views\Home\Messages.g.cshtml.cs
 C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\Razor\Views\Home\MessageSent.g.cshtml.cs
+C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\Razor\Views\Home\Messenger.g.cshtml.cs
 C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\Razor\Views\Info\Info.g.cshtml.cs
 C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\Razor\Views\Info\Locations.g.cshtml.cs
 C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\Razor\Views\Info\People.g.cshtml.cs
@@ -32,5 +34,3 @@ C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\Com
 C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\CommunityInformation.Views.pdb
 C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\CommunityInformation.csproj.CopyComplete
 C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\CommunityInformation.csprojAssemblyReference.cache
-C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\Razor\Views\Home\Messages.g.cshtml.cs
-C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\Razor\Views\Home\Messanger.g.cshtml.cs
