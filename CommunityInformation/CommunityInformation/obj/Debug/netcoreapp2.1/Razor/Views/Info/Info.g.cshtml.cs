@@ -66,12 +66,12 @@ using CommunityInformation.Models;
             WriteLiteral("\r\n<!DOCTYPE html>\r\n<html>\r\n\r\n\r\n");
             EndContext();
             BeginContext(60, 202, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a73671eb1542a0b75219cfe5076aa7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "286a4a25f89c42cf87a8e2ea1378e307", async() => {
                 BeginContext(66, 104, true);
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width\" />\r\n    <title>Donbass Highlights</title>\r\n    ");
                 EndContext();
                 BeginContext(170, 69, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "514039b5b8d541de8d3d88468528eb9c", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "5105312369314a5b8a9f3e30a7d79ddd", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -105,7 +105,7 @@ using CommunityInformation.Models;
             WriteLiteral("\r\n\r\n\r\n");
             EndContext();
             BeginContext(268, 1714, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "71214e7fe6ca480884b311b4d3bbd009", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c8c6c5e9f4a544788286f47a3b5054da", async() => {
                 BeginContext(274, 258, true);
                 WriteLiteral(@"
     <h1 class=""text-center text-primary"">Highlights of Donbass</h1>
@@ -119,7 +119,7 @@ using CommunityInformation.Models;
                     <h3>");
                 EndContext();
                 BeginContext(532, 39, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7e304c829fd145488d0dbdecfe4b44a7", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cc5cbdf74d104ea4bed34a1ba61f8532", async() => {
                     BeginContext(558, 9, true);
                     WriteLiteral("Locations");
                     EndContext();
@@ -141,7 +141,7 @@ using CommunityInformation.Models;
                 WriteLiteral(" of Donbass.</h3>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-12\">\r\n                <div class=\"text-center\">\r\n                    <h3>");
                 EndContext();
                 BeginContext(783, 33, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9ecb1f88f514395ab33a3368c6d8dc1", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dd2500424c2047ac8164130230cd958b", async() => {
                     BeginContext(806, 6, true);
                     WriteLiteral("People");
                     EndContext();

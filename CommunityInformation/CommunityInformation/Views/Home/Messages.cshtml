@@ -32,18 +32,25 @@
 
                 i++;
                 // make every other message color different
-                <div class="row @(i % 2 == 0 ? "bg-info" : "")">
-                    <div class="col-lg-2 @(i % 2 != 0 ? "bg-primary" : "")">
-                        <h3>@i.</h3>
-                        <strong>@(Repository.LoggedIn == m.Sender ? "To: " + m.Recipient.Name : "From: " + m.Sender.Name)</strong>
-                    </div>
-
-                    <div class="col-lg-10">
-                        <h4>@m.Subject</h4>
-                        @m.Text
-                        <br>
-                    </div>
+            <div class="row @(i % 2 == 0 ? "bg-info" : "")">
+                <div class="col-lg-2 @(i % 2 != 0 ? "bg-primary" : "")">
+                    <h3>@i.</h3>
+                    <strong>@(Repository.LoggedIn == m.Sender ? "To: " + m.Recipient.Name : "From: " + m.Sender.Name)</strong>
                 </div>
+
+                <div class="col-lg-9">
+                    <h4>@m.Subject</h4>
+                    @m.Text
+                    <br>
+                </div>
+
+                <div class="col-lg-1"> 
+                    <br>
+                    <a class="btn btn-default" asp-action="Messenger">Reply</a>
+                </div>
+
+                   
+            </div>
             }
         }
 

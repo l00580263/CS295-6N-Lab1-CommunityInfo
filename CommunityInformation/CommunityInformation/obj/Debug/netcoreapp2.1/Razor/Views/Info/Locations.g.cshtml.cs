@@ -63,12 +63,12 @@ using CommunityInformation.Models;
             WriteLiteral("\r\n<!DOCTYPE html>\r\n<html>\r\n\r\n\r\n");
             EndContext();
             BeginContext(106, 201, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d5ee8dd6255f412384a9a7289b991e0c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9dbf5cbd04b646ca9ebda5af20833723", async() => {
                 BeginContext(112, 103, true);
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width\" />\r\n    <title>Donbass Locations</title>\r\n    ");
                 EndContext();
                 BeginContext(215, 69, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "021e159491a144f58d58170243e9767b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "a362f2be4458450596c0a92360271fb2", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -102,7 +102,7 @@ using CommunityInformation.Models;
             WriteLiteral("\r\n\r\n\r\n");
             EndContext();
             BeginContext(313, 2448, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "862b95c1a5ca4f62888e75a85c2576e8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a3f9529cae0f4109b47c628f04ccc045", async() => {
                 BeginContext(319, 91, true);
                 WriteLiteral("\r\n    <h1 class=\"text-center text-primary\">Must See Locations of Donbass</h1>\r\n    <br>\r\n\r\n");
                 EndContext();
