@@ -2,7 +2,7 @@
 @{
 //Layout = null;
 }
-@model List<Message>
+@model MessagesPasser
 
 <!DOCTYPE html>
 
@@ -14,7 +14,7 @@
     <title>Messages</title>
 </head>
 <body>
-    <h1 class="text-center">Messages for @Repository.LoggedIn.Name</h1>
+    <h1 class="text-center">Messages for @Model.LoggedUser.Name</h1>
     <br>
     <div> Send a Message using: <a class="btn btn-default" asp-area="" asp-controller="Home" asp-action="Messenger">Messenger</a></div>
     <br>
@@ -22,9 +22,9 @@
     <div class="container">
         @{
             int i = 0;
-            foreach (var m in @Model)
+            foreach (var m in @Model.Messages)
             {
-                if (m.Sender != Repository.LoggedIn && m.Recipient != Repository.LoggedIn)
+                if (m.Sender != Model.LoggedUser && m.Recipient != Model.LoggedUser)
                 {
                     // messages have to be from or to the logged in user
                     continue;
@@ -35,7 +35,7 @@
             <div class="row @(i % 2 == 0 ? "bg-info" : "")">
                 <div class="col-lg-2 @(i % 2 != 0 ? "bg-primary" : "")">
                     <h3>@i.</h3>
-                    <strong>@(Repository.LoggedIn == m.Sender ? "To: " + m.Recipient.Name : "From: " + m.Sender.Name)</strong>
+                    <strong>@(Model.LoggedUser == m.Sender ? "To: " + m.Recipient.Name : "From: " + m.Sender.Name)</strong>
                 </div>
 
                 <div class="col-lg-9">
@@ -44,12 +44,19 @@
                     <br>
                 </div>
 
-                <div class="col-lg-1"> 
-                    <br>
-                    <a class="btn btn-default" asp-action="Messenger">Reply</a>
-                </div>
-
-                   
+                @{
+                    if (Model.LoggedUser != m.Sender)
+                    {
+                        <div class="col-lg-1">
+                            <br>
+                            <form class="p-a-1" asp-controller="Home" asp-action="Messages" method="post">
+                                <input asp-for="Recipient" value="@Model.Users.IndexOf(m.Sender)" type="hidden" />
+                                <input asp-for="Subject" value="@m.Subject" type="hidden" />
+                                <button class="btn btn-primary" type="submit">Reply</button>
+                            </form>
+                        </div>
+                    }
+                }                   
             </div>
             }
         }

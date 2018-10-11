@@ -1,4 +1,4 @@
-﻿@model CommunityInformation.Models.Message
+﻿@model MessagesPasser
 
 @{
     Layout = null;
@@ -34,15 +34,15 @@
                         @{
                             // list contacts
                             int i = 0;
-                            foreach (User usr in Repository.Users)
+                            foreach (User usr in Model.Users)
                             {
-                                if (usr == Repository.LoggedIn)
+                                if (usr == Model.LoggedUser)
                                 {
                                     //also removes the logged in user from contacts
                                     i++;
                                     continue;
                                 }
-                                <option value="@i">@usr.Name</option>
+                                <option value="@i" @(Model.Recipient != null ? "selected" : "")>@usr.Name</option>
                                 i++;
                             }
                         }
@@ -50,7 +50,7 @@
                     </select>
 
                     <label asp-for="Subject">Subject:</label>
-                    <input class="form-control" asp-for="Subject"/>
+                    <input class="form-control" asp-for="Subject" value="@(Model.Subject != null ? "RE: " + Model.Subject : "")"/>
 
                     <label asp-for="Text">Your Message:</label>
                     <input class="form-control" asp-for="Text" />
