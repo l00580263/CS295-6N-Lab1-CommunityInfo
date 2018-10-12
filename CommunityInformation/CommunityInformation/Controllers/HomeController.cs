@@ -92,7 +92,8 @@ namespace CommunityInformation.Controllers
             if (ModelState.IsValid)
             {
                 // create new message
-                Message newMessage = new Message() { Sender = Repository.LoggedIn, Recipient = Repository.Users[Recipient], Subject = Subject, Text = Text };
+                Message newMessage = new Message() { Sender = Repository.LoggedIn, Subject = Subject, Text = Text };
+                newMessage.SetRecipientFromInt(Recipient);
                 // add new message
                 Repository.Messages.Add(newMessage);
                 // view messages
