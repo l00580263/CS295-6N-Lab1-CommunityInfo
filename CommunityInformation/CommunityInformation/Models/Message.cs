@@ -12,14 +12,64 @@ namespace CommunityInformation.Models
 
 
         #region properties
-        //[Required(ErrorMessage = "Please Enter your Name.")]
         public User Sender { get; set; }
-        //[Required(ErrorMessage = "Please Enter the Recipient.")]
         public User Recipient { get; set; }
+
         [Required(ErrorMessage = "Please Enter the Subject.")]
-        public string Subject { get; set; }
+        public string Subject { get; set; } = null;
         [Required(ErrorMessage = "Please Enter your Message.")]
-        public string Text { get; set; }
+        public string Text { get; set; } = null;
+
+        public DateTime SentDate { get; }
+        #endregion
+
+
+
+        #region Constructor
+        public Message()
+        {
+            SentDate = DateTime.Now;
+        }
+        #endregion
+
+
+
+        #region Methods
+        public void SetSenderFromInt(int index)
+        {
+            Sender = Repository.Users[index];
+        }
+
+
+
+        public void SetRecipientFromInt(int index)
+        {
+            Recipient = Repository.Users[index];
+        }
+
+
+
+        public int GetSenderAsInt()
+        {
+            if (Sender == null)
+            {
+                return -1;
+            }
+
+            return Repository.Users.IndexOf(Sender);
+        }
+
+
+
+        public int GetRecipientAsInt()
+        {
+            if (Recipient == null)
+            {
+                return -1;
+            }
+
+            return Repository.Users.IndexOf(Recipient);
+        }
         #endregion
     }
 }

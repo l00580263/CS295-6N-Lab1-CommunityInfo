@@ -58,10 +58,8 @@ namespace CommunityInformation.Controllers
         [HttpGet]
         public ViewResult Messages()
         {
-            // create pass object to store messages and logged in user
-            MessagesPasser pass = new MessagesPasser() { Messages = Repository.Messages, LoggedUser = Repository.LoggedIn, Users = Repository.Users};
             // View messages
-            return View(pass);
+            return View();
         }
 
 
@@ -69,10 +67,12 @@ namespace CommunityInformation.Controllers
         [HttpPost]
         public ViewResult Messages(string Subject, int Recipient)
         {
-            // create pass object to store the (message to reply to)'s subject and sender
-            MessagesPasser pass = new MessagesPasser() { Subject = Subject, Recipient = Recipient, Users = Repository.Users };
+            // create message object to store the message to reply to
+            Message replyTo = new Message() { Subject = Subject };
+            // set the person who sent the message that we are replying to
+            replyTo.SetSenderFromInt(Recipient);
             // View messages
-            return View("Messenger", pass);
+            return View("Messenger", replyTo);
         }
 
 
@@ -80,10 +80,8 @@ namespace CommunityInformation.Controllers
         [HttpGet]
         public ViewResult Messenger()
         {
-            // create pass object to store messages and logged in user
-            MessagesPasser pass = new MessagesPasser() { Messages = Repository.Messages, LoggedUser = Repository.LoggedIn, Users = Repository.Users };
             // Message people
-            return View(pass);
+            return View();
         }        
        
 
@@ -93,12 +91,12 @@ namespace CommunityInformation.Controllers
         {
             if (ModelState.IsValid)
             {
+                // create new message
                 Message newMessage = new Message() { Sender = Repository.LoggedIn, Recipient = Repository.Users[Recipient], Subject = Subject, Text = Text };
-                // add message
+                // add new message
                 Repository.Messages.Add(newMessage);
-                // create pass object to store messages and logged in user
-                MessagesPasser pass = new MessagesPasser() { Messages = Repository.Messages, LoggedUser = Repository.LoggedIn, Users = Repository.Users };
-                return View("Messages", pass);
+                // view messages
+                return View("Messages");
             }
             else
             {
