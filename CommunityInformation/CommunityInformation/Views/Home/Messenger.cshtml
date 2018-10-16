@@ -34,9 +34,9 @@
                         @{
                             // list contacts
                             int i = 0;
-                            foreach (User usr in Repository.Users)
+                            foreach (User usr in ViewBag.users)
                             {
-                                if (usr == Repository.LoggedIn)
+                                if (usr == ViewBag.loggedIn)
                                 {
                                     //also removes the logged in user from contacts
                                     i++;

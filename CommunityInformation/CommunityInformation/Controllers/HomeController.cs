@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CommunityInformation.Models;
+using System.Web;
 
 namespace CommunityInformation.Controllers
 {
@@ -58,31 +59,28 @@ namespace CommunityInformation.Controllers
         [HttpGet]
         public ViewResult Messages()
         {
+            // add logged in user
+            ViewBag.loggedIn = Repository.LoggedIn;
             // View messages
-            return View();
-        }
-
-
-
-        [HttpPost]
-        public ViewResult Messages(string Subject, int Recipient)
-        {
-            // create message object to store the message to reply to
-            Message replyTo = new Message() { Subject = Subject };
-            // set the person who sent the message that we are replying to
-            replyTo.SetSenderFromInt(Recipient);
-            // View messages
-            return View("Messenger", replyTo);
+            return View(Repository.Messages);
         }
 
 
 
         [HttpGet]
-        public ViewResult Messenger()
+        public ViewResult Messenger(string Subject, string Recipient)
         {
-            // Message people
-            return View();
-        }        
+            // create message object to store the message to reply to
+            Message replyTo = new Message() { Subject = HttpUtility.HtmlDecode(Subject) };
+            // set the person who sent the message that we are replying to
+            replyTo.SetSenderFromInt(int.Parse(HttpUtility.HtmlDecode(Recipient)));
+            // add logged in user
+            ViewBag.loggedIn = Repository.LoggedIn;
+            // add list of users
+            ViewBag.users = Repository.Users;
+            // View messages
+            return View("Messenger", replyTo);
+        }    
        
 
 
@@ -96,11 +94,17 @@ namespace CommunityInformation.Controllers
                 newMessage.SetRecipientFromInt(Recipient);
                 // add new message
                 Repository.Messages.Add(newMessage);
+                // add logged in user
+                ViewBag.loggedIn = Repository.LoggedIn;
                 // view messages
-                return View("Messages");
+                return View("Messages", Repository.Messages);
             }
             else
             {
+                // add logged in user
+                ViewBag.loggedIn = Repository.LoggedIn;
+                // add list of users
+                ViewBag.users = Repository.Users;
                 // error
                 return View();
             }
