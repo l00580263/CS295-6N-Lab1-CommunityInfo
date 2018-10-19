@@ -1,6 +1,7 @@
 ﻿
 @{
-//Layout = null;
+    Layout = "_LayoutMessage";
+    ViewBag.Title = "Messages";
 }
 @model List<Message>
 
@@ -16,10 +17,11 @@
 <body>
     <h1 class="text-center">Messages for @ViewBag.loggedIn.Name</h1>
     <br>
-    <div> Send a Message using: <a class="btn btn-default" asp-route-Recipient="0" asp-route-Subject="" asp-action="Messenger">Send Message</a></div>
-    <br>
 
     <div class="container">
+        <div> Send a Message using: <a class="btn btn-default" asp-route-Recipient="0" asp-route-Subject="" asp-action="Messenger">Send Message</a></div>
+        <br>
+
         @{
             int i = 0;
             List<Message> ms = Model;
@@ -53,12 +55,12 @@
                     @{
                         if (ViewBag.loggedIn != m.Sender)
                         {
-                        <div class="col-lg-1">
-                            <br>
-                            <a asp-route-Recipient="@m.GetSenderAsInt()" asp-route-Subject="@m.Subject" asp-action="Messenger" class="btn btn-primary">Reply</a>
-                        </div>
+                            <div class="col-lg-1">
+                                <br>
+                                <a asp-route-Recipient="@m.GetSenderAsInt()" asp-route-Subject="@m.Subject" asp-action="Messenger" class="btn btn-primary">Reply</a>
+                            </div>
                         }
-                    }                   
+                    }
                 </div>
             }
         }

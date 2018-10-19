@@ -80,8 +80,8 @@ namespace CommunityInformation.Controllers
             ViewBag.users = Repository.Users;
             // View messages
             return View("Messenger", replyTo);
-        }    
-       
+        }
+
 
 
         [HttpPost]
