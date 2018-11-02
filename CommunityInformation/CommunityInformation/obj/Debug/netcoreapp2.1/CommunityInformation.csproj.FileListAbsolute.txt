@@ -35,3 +35,4 @@ C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\Com
 C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\CommunityInformation.dll
 C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\CommunityInformation.pdb
 C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\CommunityInformation.csproj.CopyComplete
+C:\Cameron Files\School\LCC\CS 295n\Lab 1\CommunityInfo\CommunityInformation\CommunityInformation\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs

@@ -35,40 +35,40 @@ namespace CommunityInformation.Models
 
 
         #region Methods
-        public void SetSenderFromInt(int index)
+        public void SetSenderFromInt(int index, IRepository repo)
         {
-            Sender = Repository.Users[index];
+            Sender = repo.Users[index];
         }
 
 
 
-        public void SetRecipientFromInt(int index)
+        public void SetRecipientFromInt(int index, IRepository repo)
         {
-            Recipient = Repository.Users[index];
+            Recipient = repo.Users[index];
         }
 
 
 
-        public int GetSenderAsInt()
+        public int GetSenderAsInt(IRepository repo)
         {
             if (Sender == null)
             {
                 return -1;
             }
 
-            return Repository.Users.IndexOf(Sender);
+            return repo.Users.IndexOf(Sender);
         }
 
 
 
-        public int GetRecipientAsInt()
+        public int GetRecipientAsInt(IRepository repo)
         {
             if (Recipient == null)
             {
                 return -1;
             }
 
-            return Repository.Users.IndexOf(Recipient);
+            return repo.Users.IndexOf(Recipient);
         }
         #endregion
     }

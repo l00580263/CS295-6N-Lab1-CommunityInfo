@@ -3,7 +3,7 @@
     Layout = "_LayoutMessage";
     ViewBag.Title = "Messages";
 }
-@model List<Message>
+@model IRepository
 
 <!DOCTYPE html>
 
@@ -15,7 +15,7 @@
     <title>Messages</title>
 </head>
 <body>
-    <h1 class="text-center">Messages for @ViewBag.loggedIn.Name</h1>
+    <h1 class="text-center">Messages for @Model.LoggedIn.Name</h1>
     <br>
 
     <div class="container">
@@ -24,7 +24,7 @@
 
         @{
             int i = 0;
-            List<Message> ms = Model;
+            List<Message> ms = Model.Messages;
             // sort by newest first
             ms = ms.OrderByDescending(m => m.SentDate).ToList();
 
@@ -57,7 +57,7 @@
                         {
                             <div class="col-lg-1">
                                 <br>
-                                <a asp-route-Recipient="@m.GetSenderAsInt()" asp-route-Subject="@m.Subject" asp-action="Messenger" class="btn btn-primary">Reply</a>
+                                <a asp-route-Recipient="@m.GetSenderAsInt(Model)" asp-route-Subject="@m.Subject" asp-action="Messenger" class="btn btn-primary">Reply</a>
                             </div>
                         }
                     }

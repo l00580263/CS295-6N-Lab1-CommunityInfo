@@ -5,12 +5,10 @@ using System.Threading.Tasks;
 
 namespace CommunityInformation.Models
 {
-    public class Repository
+    public class Repository : IRepository
     {
-        // tmp properties
-        public static bool Fresh { get; set; } = true;
-        public static List<User> Users { get; set; } = new List<User>();
-        public static List<Message> Messages { get; set; } = new List<Message>();
-        public static User LoggedIn { get; set; }
+        public List<User> Users { get; set; } = new List<User>();
+        public List<Message> Messages { get; set; } = new List<Message>();
+        public User LoggedIn { get; set; }
     }
 }

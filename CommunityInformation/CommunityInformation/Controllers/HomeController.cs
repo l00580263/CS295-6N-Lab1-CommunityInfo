@@ -11,29 +11,14 @@ namespace CommunityInformation.Controllers
 {
     public class HomeController : Controller
     {
-
+        IRepository repository;
 
 
         #region Constructors
-        public HomeController()
+        public HomeController(IRepository repo)
         {
-            if (!Repository.Fresh)
-            {
-                return;
-            }
-            // initialize repository
-            User user1 = new User() { Name = "Kolton" };
-            User user2 = new User() { Name = "Bobby" };
-            User user3 = new User() { Name = "Hank" };
-            Repository.Users.AddRange(new User[]{user1, user2, user3});
-            Message message1 = new Message() { Subject = "This site sucks", Text = "Not kidding, RIP.", Recipient = user2, Sender = user1 };
-            Message message2 = new Message() { Subject = "RE: This site sucks", Text = "bruh, swag yeah", Recipient = user1, Sender = user2 };
-            Message message4 = new Message() { Subject = "u r loser", Text = "Git gud, Bobby.", Recipient = user2, Sender = user3 };
-            Message message3 = new Message() { Subject = "Wait till Bobby sees this!", Text = "Dang it, Bobby.", Recipient = user1, Sender = user3 };
-            Repository.Messages.AddRange(new Message[] { message1, message2, message3, message4 });
-            // log in as Bobby
-            Repository.LoggedIn = user2;
-            Repository.Fresh = false;
+            // tmp cast
+            repository = (FakeRepo)repo;
         }
         #endregion
 
@@ -59,10 +44,8 @@ namespace CommunityInformation.Controllers
         [HttpGet]
         public ViewResult Messages()
         {
-            // add logged in user
-            ViewBag.loggedIn = Repository.LoggedIn;
             // View messages
-            return View(Repository.Messages);
+            return View(repository);
         }
 
 
@@ -73,11 +56,11 @@ namespace CommunityInformation.Controllers
             // create message object to store the message to reply to
             Message replyTo = new Message() { Subject = HttpUtility.HtmlDecode(Subject) };
             // set the person who sent the message that we are replying to
-            replyTo.SetSenderFromInt(int.Parse(HttpUtility.HtmlDecode(Recipient)));
+            replyTo.SetSenderFromInt(int.Parse(HttpUtility.HtmlDecode(Recipient)), repository);
             // add logged in user
-            ViewBag.loggedIn = Repository.LoggedIn;
+            ViewBag.loggedIn = repository.LoggedIn;
             // add list of users
-            ViewBag.users = Repository.Users;
+            ViewBag.users = repository.Users;
             // View messages
             return View("Messenger", replyTo);
         }
@@ -90,21 +73,21 @@ namespace CommunityInformation.Controllers
             if (ModelState.IsValid)
             {
                 // create new message
-                Message newMessage = new Message() { Sender = Repository.LoggedIn, Subject = Subject, Text = Text };
-                newMessage.SetRecipientFromInt(Recipient);
+                Message newMessage = new Message() { Sender = repository.LoggedIn, Subject = Subject, Text = Text };
+                newMessage.SetRecipientFromInt(Recipient, repository);
                 // add new message
-                Repository.Messages.Add(newMessage);
+                repository.Messages.Add(newMessage);
                 // add logged in user
-                ViewBag.loggedIn = Repository.LoggedIn;
+                ViewBag.loggedIn = repository.LoggedIn;
                 // view messages
-                return View("Messages", Repository.Messages);
+                return View("Messages", repository);
             }
             else
             {
                 // add logged in user
-                ViewBag.loggedIn = Repository.LoggedIn;
+                ViewBag.loggedIn = repository.LoggedIn;
                 // add list of users
-                ViewBag.users = Repository.Users;
+                ViewBag.users = repository.Users;
                 // error
                 return View();
             }
