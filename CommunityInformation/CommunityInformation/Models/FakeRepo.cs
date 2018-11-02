@@ -7,7 +7,7 @@ namespace CommunityInformation.Models
 {
     public class FakeRepo : IRepository
     {
-        public List<User> Users { get; set; } = new List<User>() { };
+        public List<User> Users { get; set; } = new List<User>();
         public List<Message> Messages { get; set; } = new List<Message>();
         public User LoggedIn { get; set; }
 
