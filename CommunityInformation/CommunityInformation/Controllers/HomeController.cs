@@ -18,7 +18,7 @@ namespace CommunityInformation.Controllers
         public HomeController(IRepository repo)
         {
             // tmp cast
-            repository = (FakeRepo)repo;
+            repository = repo;
         }
         #endregion
 
@@ -76,9 +76,7 @@ namespace CommunityInformation.Controllers
                 Message newMessage = new Message() { Sender = repository.LoggedIn, Subject = Subject, Text = Text };
                 newMessage.SetRecipientFromInt(Recipient, repository);
                 // add new message
-                repository.Messages.Add(newMessage);
-                // add logged in user
-                ViewBag.loggedIn = repository.LoggedIn;
+                repository.AddMessage(newMessage);
                 // view messages
                 return View("Messages", repository);
             }

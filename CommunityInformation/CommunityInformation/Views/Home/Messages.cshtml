@@ -30,7 +30,7 @@
 
             foreach (var m in ms)
             {
-                if (m.Sender != ViewBag.loggedIn && m.Recipient != ViewBag.loggedIn)
+                if (m.Sender != Model.LoggedIn && m.Recipient != Model.LoggedIn)
                 {
                     // messages have to be from or to the logged in user
                     continue;
@@ -41,7 +41,7 @@
                 <div class="row @(i % 2 == 0 ? "bg-info" : "")">
                     <div class="col-lg-2 @(i % 2 != 0 ? "bg-primary" : "")">
                         <h3>@i.</h3>
-                        <strong>@(ViewBag.loggedIn == m.Sender ? "To: " + m.Recipient.Name : "From: " + m.Sender.Name)</strong>
+                        <strong>@(Model.LoggedIn == m.Sender ? "To: " + m.Recipient.Name : "From: " + m.Sender.Name)</strong>
                         <br>
                         <span>@m.SentDate</span>
                     </div>
@@ -53,7 +53,7 @@
                     </div>
 
                     @{
-                        if (ViewBag.loggedIn != m.Sender)
+                        if (Model.LoggedIn != m.Sender)
                         {
                             <div class="col-lg-1">
                                 <br>

@@ -7,9 +7,13 @@ namespace CommunityInformation.Models
 {
     public interface IRepository
     {
-        List<User> Users { get; set; }
-        List<Message> Messages { get; set; }
+        List<User> Users { get; }
+        List<Message> Messages { get; }
         User LoggedIn { get; set; }
+
+
+
+        void AddMessage(Message m);
     }
 
     /*

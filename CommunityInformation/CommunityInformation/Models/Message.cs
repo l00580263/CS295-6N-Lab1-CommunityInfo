@@ -12,6 +12,7 @@ namespace CommunityInformation.Models
 
 
         #region properties
+        public int MessageID { get; set; }
         public User Sender { get; set; }
         public User Recipient { get; set; }
 
@@ -20,7 +21,7 @@ namespace CommunityInformation.Models
         [Required(ErrorMessage = "Please Enter your Message.")]
         public string Text { get; set; } = null;
 
-        public DateTime SentDate { get; }
+        public DateTime? SentDate { get; set; }
         #endregion
 
 
@@ -28,7 +29,10 @@ namespace CommunityInformation.Models
         #region Constructor
         public Message()
         {
-            SentDate = DateTime.Now;
+            if (SentDate == null)
+            {
+                SentDate = DateTime.Now;
+            }
         }
         #endregion
 
