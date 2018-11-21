@@ -39,7 +39,7 @@ namespace CommunityInformation
 
             // stuff
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration["Data:ComInfo:ConnectionString"]));
+                options.UseSqlServer(Configuration["ConnectionStrings:ConnectionString"]));
             services.AddTransient<IRepository, Repository>();
             services.AddMvc();
         }
