@@ -22,11 +22,96 @@
         <div> Send a Message using: <a class="btn btn-default" asp-route-Recipient="0" asp-route-Subject="" asp-action="Messenger">Send Message</a></div>
         <br>
 
+        <div class="bg-warning row">
+            <h3>Search Messages</h3>
+            <br>
+            <form class="p-a-1" asp-controller="Home" asp-action="Messages" method="post">
+
+                <div class="form-group">
+
+                    <label>Start Date:</label>
+                    <input type="date" asp-route-startDate name="startDate">
+
+                    <label>End Date:</label>
+                    <input type="date" asp-route-endDate name="endDate">
+                    <br>
+                    <label>Sender:</label>
+                    <input asp-route-sender name="sender">
+
+                    <label>Recipient:</label>
+                    <input asp-route-recipient name="recipient">
+
+                    <br>
+                    @{
+                        if (ViewBag.SearchByDateStart != null)
+                        {
+                            <p>Start Date: @ViewBag.SearchByDateStart.Date.ToString("d")</p>
+                        }
+
+                        if (ViewBag.SearchByDateEnd != null)
+                        {
+                            <p>End Date: @ViewBag.SearchByDateEnd.Date.ToString("d")</p>
+                        }
+
+                        if (ViewBag.Sender != null)
+                        {
+                            <p>Sender: @ViewBag.Sender</p>
+                        }
+
+                        if (ViewBag.Recipient != null)
+                        {
+                            <p>Recipient: @ViewBag.Recipient</p>
+                        }
+                    }
+
+                </div>
+
+                <button class="btn btn-primary" type="submit">Search Messages</button>
+
+            </form>
+        </div>
+        <br />
+
         @{
             int i = 0;
             List<Message> ms = Model.Messages;
             // sort by newest first
             ms = ms.OrderByDescending(m => m.SentDate).ToList();
+
+            // get date parameters
+            long start;
+            long end;
+
+            if (ViewBag.SearchByDateStart != null)
+            {
+                start = ViewBag.SearchByDateStart.Ticks;
+            }
+            else
+            {
+                start = DateTime.MinValue.Ticks;
+            }
+
+            if (ViewBag.SearchByDateEnd != null)
+            {
+                end = ViewBag.SearchByDateEnd.Ticks + TimeSpan.TicksPerDay;
+            }
+            else
+            {
+                end = DateTime.MaxValue.Ticks;
+            }
+
+            // get sender parameters
+            string sender = ViewBag.Sender;
+            string recipient = ViewBag.Recipient;
+
+
+            // linq for date
+            ms = (from m in ms
+                  where m.SentDate.Ticks > start
+                  && m.SentDate.Ticks < end
+                  && (m.Sender.Name == sender || sender == null)
+                  && (m.Recipient.Name == recipient || recipient == null)
+                  select m).ToList<Message>();
 
             foreach (var m in ms)
             {
@@ -60,7 +145,7 @@
                                 <a asp-route-Recipient="@m.GetSenderAsInt(Model)" asp-route-Subject="@m.Subject" asp-action="Messenger" class="btn btn-primary">Reply</a>
                             </div>
                         }
-                    }
+            }
                 </div>
             }
         }

@@ -21,7 +21,7 @@ namespace CommunityInformation.Models
         [Required(ErrorMessage = "Please Enter your Message.")]
         public string Text { get; set; } = null;
 
-        public DateTime? SentDate { get; set; }
+        public DateTime SentDate { get; set; }
         #endregion
 
 

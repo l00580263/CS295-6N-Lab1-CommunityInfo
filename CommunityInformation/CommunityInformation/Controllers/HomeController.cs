@@ -50,6 +50,33 @@ namespace CommunityInformation.Controllers
 
 
 
+        [HttpPost]
+        public ViewResult Messages(DateTime startDate, DateTime endDate, string sender, string recipient)
+        {
+
+            // add search data
+            if (startDate.Ticks != 0)
+            {
+                ViewBag.SearchByDateStart = startDate;
+            }
+            if (endDate.Ticks != 0)
+            {
+                ViewBag.SearchByDateEnd = endDate;
+            }
+            if (sender != null)
+            {
+                ViewBag.Sender = sender;
+            }
+            if (recipient != null)
+            {
+                ViewBag.Recipient = recipient;
+            }
+            // View messages
+            return View(repository);
+        }
+
+
+
         [HttpGet]
         public ViewResult Messenger(string Subject, string Recipient)
         {
