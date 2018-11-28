@@ -95,13 +95,13 @@ namespace CommunityInformation.Controllers
 
 
         [HttpPost]
-        public ViewResult Messenger(int Recipient, string Subject, string Text)
+        public ViewResult Messenger(Message m)
         {
             if (ModelState.IsValid)
             {
                 // create new message
-                Message newMessage = new Message() { Sender = repository.LoggedIn, Subject = Subject, Text = Text };
-                newMessage.SetRecipientFromInt(Recipient, repository);
+                Message newMessage = new Message() { Sender = repository.LoggedIn, Subject = m.Subject, Text = m.Text, SentDate = DateTime.Now };
+                newMessage.SetRecipientFromInt(m.RecipientInt, repository);
                 // add new message
                 repository.AddMessage(newMessage);
                 // view messages

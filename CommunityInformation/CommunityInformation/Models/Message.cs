@@ -16,12 +16,18 @@ namespace CommunityInformation.Models
         public User Sender { get; set; }
         public User Recipient { get; set; }
 
+        [StringLength(30, MinimumLength = 5)]
         [Required(ErrorMessage = "Please Enter the Subject.")]
         public string Subject { get; set; } = null;
+        [StringLength(400, MinimumLength = 3)]
         [Required(ErrorMessage = "Please Enter your Message.")]
         public string Text { get; set; } = null;
 
         public DateTime SentDate { get; set; }
+
+        // sender and recipient as int
+        public int SenderInt { get; set; }
+        public int RecipientInt { get; set; }
         #endregion
 
 

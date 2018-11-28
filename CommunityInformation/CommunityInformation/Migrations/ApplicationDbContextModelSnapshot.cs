@@ -25,17 +25,23 @@ namespace CommunityInformation.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("RecipientInt");
+
                     b.Property<int?>("RecipientUserId");
+
+                    b.Property<int>("SenderInt");
 
                     b.Property<int?>("SenderUserId");
 
-                    b.Property<DateTime?>("SentDate");
+                    b.Property<DateTime>("SentDate");
 
                     b.Property<string>("Subject")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(30);
 
                     b.Property<string>("Text")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(400);
 
                     b.HasKey("MessageID");
 
@@ -52,7 +58,8 @@ namespace CommunityInformation.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.HasKey("UserId");
 
